@@ -48,14 +48,10 @@ class ProductTransaction extends Model
     {
         return $this->belongsTo(PromoCode::class, 'promo_code_id');
     }
-    public function external(): BelongsTo
+
+    public function external():BelongsTo
     {
         return $this->belongsTo(External::class, 'external_id');
-    }
-
-    public function externals():HasMany
-    {
-        return $this->hasMany(External::class);
     }
 
 
