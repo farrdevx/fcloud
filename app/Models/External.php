@@ -14,7 +14,7 @@ class External extends Model
     protected $fillable = [
 
         'name',
-        'price',
+        'eprice',
 
     ];
 }
