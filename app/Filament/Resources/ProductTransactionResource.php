@@ -48,7 +48,7 @@ class ProductTransactionResource extends Resource
                                 $price = $package ? $package->price : 0;
                                 $quantity = $get('quantity') ?? 1;
                                 $eprice = $get('eprice');
-                                $subTotalAmount = $price * $quantity;
+                                $subTotalAmount = $price + $eprice * $quantity;
 
                                 $set('price', $price);
                                 $set('sub_total_amount', $subTotalAmount);
@@ -69,7 +69,7 @@ class ProductTransactionResource extends Resource
                                     $price = $get('price');
                                     $eprice = $external ? $external->eprice : 0;
                                     $quantity = $get('quantity') ?? 1;
-                                    $subTotalAmount = $eprice * $quantity;
+                                    $subTotalAmount = $price + $eprice * $quantity;
 
                                     $set('eprice', $eprice);
                                     $set('sub_total_amount', $subTotalAmount);
